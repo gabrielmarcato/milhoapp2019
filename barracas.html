@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <meta charset="utf-8">
+    <title>MilhoAPP - Barraca</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <!-- Menu - Fixo -->
+    <div class="header shadow">
+      <img src="img/Logo.png" alt="" class="logo">
+      <input type="checkbox" id="chk">
+      <label for="chk" class="show-menu-btn">
+        <i class="fas fa-ellipsis-h"></i>
+      </label>
+
+      <ul class="menu">
+        <a href="home.html">Home</a>
+        <a href="barracas.html">Barracas</a>
+        <a href="pratos.html">Pratos</a>
+        <a href="bebidas.html">Bebidas</a>
+        <a href="logout.html">Sair</a>
+        <label for="chk" class="hide-menu-btn">
+          <i class="fas fa-times"></i>
+        </label>
+      </ul>
+    </div>
+    <!-- Menu - FIM -->
+
+
+    <!-- Main - Corpo do painel -->
+    <main>
+      <div class="container">
+        <div class="cadastrar shadow"> <!-- Cadastrar -->
+          <h4 class="border-bot">Barraca</h4>
+          <form name="formBarraca" class="mt-3" action="" method="POST">
+            <div class="row">
+              <div class="col">
+                <label>Nome</label>
+                <input type="text" name="nome" class="form-control" placeholder="Nome da barraca" maxlength="60">
+                <div id="nome"></div><!--Msg Erro-->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 mt-3">
+                <label for="semestre">Semestre</label>
+                <select name="semestre" class="form-control" id="semestres">
+                  <option value="" disabled selected>Selecione uma opção...</option>
+                  <option value="1">1º</option>
+                  <option value="2">2º</option>
+                  <option value="3">3º</option>
+                  <option value="4">4º</option>
+                  <option value="5">5º</option>
+                  <option value="6">6º</option>
+                  <option value="7">7º</option>
+                  <option value="8">8º</option>
+                  <option value="9">9º</option>
+                  <option value="10">10º</option>
+                </select>
+                <div id="semestre"></div><!--Msg Erro-->
+              </div>
+              <div class="col-sm-6 mt-3">
+                <label for="periodos">Periodo</label>
+                <select name="periodo" class="form-control" id="periodos">
+                  <option value="" disabled selected>Selecione uma opção...</option>
+                  <option value="mat">Matutino</option>
+                  <option value="vesp">Vespertino</option>
+                  <option value="not">Noturno</option>
+                </select>
+                <div id="periodo"></div><!--Msg Erro-->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 mt-3">
+                <label>Curso</label>
+                <select name="curso" class="form-control" id="periodos">
+                  <option value="" disabled selected>Selecione uma opção...</option>
+                  <option value="ads">ADS</option>
+                  <option value="direito">Direito</option>
+                  <option value="adm">ADM</option>
+                </select>
+                <div id="curso"></div><!--Msg Erro-->
+              </div>
+              <div class="col-sm-6 mt-3">
+                <label for="pagamentos">Tipo de pagamento</label>
+                <select name="pagamento" class="form-control" id="pagamentos">
+                  <option value="" disabled selected>Selecione uma opção...</option>
+                  <option value="dinheiro">Dinheiro</option>
+                  <option value="credito">Cartão Crédito</option>
+                  <option value="debito">Cartão Débito</option>
+                </select>
+                <div id="pagamento"></div><!--Msg Erro-->
+              </div>
+            </div>
+            <button type="submit" class="btn btn-default btn-md btn-block mt-4" onclick="return validarBarraca()">Salvar</button>
+          </form>
+        </div>
+      </div> 
+    </main>
+    <!-- Main - FIM -->
+      
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+          Aplicação desenvolvida pela turma de análise e desenvolvimento de sistemas - FASIPE 2019
+        </div>
+    </footer>
+    <!-- Footer - FIM -->
+
+    <script type="text/javascript" src="js/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.js"></script>
+    <script type="text/javascript" src="js/validate.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
