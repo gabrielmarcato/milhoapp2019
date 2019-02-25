@@ -20,7 +20,7 @@
     <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>MilhoAPP - Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
@@ -52,7 +52,24 @@
 
 
     <!-- Main - Corpo do painel -->
-    
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-sm-6 mb-5">
+            <h4 class="border-bot">Top 5 Pratos</h4>
+            <div id="topPratos" style="height: 350px; "></div>
+        </div>
+        <div class="col-sm-6 mb-5">
+            <h4 class="border-bot">Top 5 Bebidas</h4>
+            <div id="topBebidas" style="height: 350px; "></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 offset-md-3 mb-5">
+          <h4 class="border-bot">Top 5 Barracas</h4>
+          <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+      </div>
+
+    </div>
     <!-- Main - FIM-->
       
 
@@ -64,6 +81,7 @@
     </footer>
     <!-- Footer - FIM -->
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/graphics.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   </body>
 </html>

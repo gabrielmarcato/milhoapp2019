@@ -74,6 +74,12 @@
   background-color: var(--cor-bg-content);
   margin-bottom: 35px;
 }
+.dashboard {
+  border: 1px solid var(--cor-border);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 35px;
+}
 .listar {
   border: 1px solid var(--cor-border);
   border-radius: 20px;
