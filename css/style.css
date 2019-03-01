@@ -88,6 +88,14 @@
   background-color: var(--cor-bg-content);
   margin-bottom: 120px;
 }
+.listar-adm {
+  border: 1px solid var(--cor-border);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 35px;
+  background-color: var(--cor-bg-content);
+  margin-bottom: 35px;
+}
 .logout {
   padding: 20px;
   margin-top: 10%;
