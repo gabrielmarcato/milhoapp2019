@@ -57,27 +57,24 @@
       <div class="container">
         <div class="cadastrar shadow"> <!-- Cadastrar -->
           <h4 class="border-bot">Cadastrar Prato</h4>
-          <form name="cadastrarPrato" class="mt-3" action="" method="POST">
+          <form name="cadastrarPrato" id="cadastrarPrato" class="mt-3" action="" method="POST">
             <div class="row">
               <div class="col">
                 <label>Nome do prato</label>
                 <input name="nome" type="text" class="form-control" placeholder="Ex: Bolo de milho" maxlength="60">
-                <div id="errNomePrato"></div><!--Msg Erro-->
               </div>
             </div>
             <div class="row">
               <div class="col-sm-6 mt-3">
                 <label>Descrição do prato</label>
                 <input name="desc" type="text" class="form-control" placeholder="Ex: Creme de milho" maxlength="60">
-                <div id="errDescPrato"></div><!--Msg Erro-->
               </div>
               <div class="col-sm-6 mt-3">
                 <label>Valor</label>
                 <input name="valor" type="text" class="form-control dinheiro" placeholder="R$0,00">
-                <div id="errValorPrato"></div><!--Msg Erro-->
               </div>
             </div>
-            <button type="submit" class="btn btn-default btn-md btn-block mt-4" onclick="return validarPrato()">Cadastrar</button>
+            <button type="submit" class="btn btn-default btn-md btn-block mt-4">Cadastrar</button>
           </form>
         </div>
       </div> 
@@ -89,11 +86,12 @@
             <table class="table table-sm">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Valor</th>
-                    <th scope="col"></th>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th></th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -103,29 +101,35 @@
                     <td>Pasta de milho</td>
                     <td>R$ 5,00</td>
                     <td>
-                        <a href="#" data-toggle="modal" data-target="#modalEditar"><i class="fas fa-edit mb-2 mr-2"></i></a>
-                        <a href="#" data-toggle="modal" data-target="#modalExcluir"><i class="fas fa-trash-alt"></i></a>
-                      </td>
+                      <a href="#" data-toggle="modal" data-target="#modalEditarPrato"><i class="fas fa-edit mb-2 mr-2"></i></a>
+                    </td>
+                    <td>
+                      <a href="#" data-toggle="modal" data-target="#modalExcluir"><i class="fas fa-trash-alt"></i></a>
+                    </td>
                   </tr>
                   <tr>
-                    <th scope="row">2</th>
-                    <td>Milho no espeto</td>
-                    <td>Milho assado</td>
-                    <td>R$ 7,50</td>
+                    <th scope="row">1</th>
+                    <td>Pamonha</td>
+                    <td>Pasta de milho</td>
+                    <td>R$ 5,00</td>
                     <td>
-                        <a href="#" data-toggle="modal" data-target="#modalEditar"><i class="fas fa-edit mb-2 mr-2"></i></a>
-                        <a href="#" data-toggle="modal" data-target="#modalExcluir"><i class="fas fa-trash-alt"></i></a>
-                      </td>
+                      <a href="#" data-toggle="modal" data-target="#modalEditarPrato"><i class="fas fa-edit mb-2 mr-2"></i></a>
+                    </td>
+                    <td>
+                      <a href="#" data-toggle="modal" data-target="#modalExcluir"><i class="fas fa-trash-alt"></i></a>
+                    </td>
                   </tr>
                   <tr>
-                    <th scope="row">3</th>
-                    <td>Creme de milho</td>
-                    <td>Milho ao creme</td>
-                    <td>R$ 6,00</td>
+                    <th scope="row">1</th>
+                    <td>Pamonha</td>
+                    <td>Pasta de milho</td>
+                    <td>R$ 5,00</td>
                     <td>
-                        <a href="#" data-toggle="modal" data-target="#modalEditar"><i class="fas fa-edit mb-2 mr-2"></i></a>
-                        <a href="#" data-toggle="modal" data-target="#modalExcluir"><i class="fas fa-trash-alt"></i></a>
-                      </td>
+                      <a href="#" data-toggle="modal" data-target="#modalEditarPrato"><i class="fas fa-edit mb-2 mr-2"></i></a>
+                    </td>
+                    <td>
+                      <a href="#" data-toggle="modal" data-target="#modalExcluir"><i class="fas fa-trash-alt"></i></a>
+                    </td>
                   </tr>
                 </tbody>
             </table>
@@ -136,7 +140,7 @@
     <!-- Main - FIM -->
 
     <!-- Modal Editar -->
-    <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalEditarPrato" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -146,7 +150,7 @@
             </button>
           </div>
           <div class="modal-body">
-              <form name="alterarPrato" action="" method="POST">
+              <form name="editarPrato" id="editarPrato" action="" method="POST">
                 <div class="row">
                   <div class="col">
                     <label>Nome do prato</label>
@@ -166,8 +170,14 @@
                     <div id="errValorPratoModal"></div><!--Msg Erro-->
                   </div>
                 </div>
-                <button type="button" class="btn btn-danger mt-4" data-dismiss="modal">Fechar</button>
-                <button type="submit" class="btn btn-default mt-4" onclick="return valAltPrato()">Salvar</button>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <button type="submit" class="btn btn-default btn-block mt-4">Salvar</button>
+                  </div>
+                  <div class="col-sm-6">
+                    <button type="button" class="btn btn-danger btn-block mt-4" data-dismiss="modal">Fechar</button>
+                  </div>
+                </div>
               </form>    
           </div>
         </div>
@@ -205,9 +215,11 @@
     </footer>
     <!-- Footer - FIM -->
 
-    <script type="text/javascript" src="js/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="js/jquery.mask.js"></script>
-    <script type="text/javascript" src="js/validate.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/localization/messages_pt_BR.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>

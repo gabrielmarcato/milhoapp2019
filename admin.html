@@ -21,7 +21,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>MilhoAPP - Home</title>
+    <title>MilhoAPP - Administrador</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -101,7 +101,7 @@
                   <td>gabrielomarcato@gmail.com</td>
                   <td>1</td>
                   <td><i class="far fa-check-circle"></i></td>
-                  <td><a href="#" data-toggle="modal" data-target="#editarUsuario"><i class="fas fa-edit mr-2"></i></a> </td>
+                  <td><a href="#" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fas fa-edit mr-2"></i></a> </td>
                   <td><a href="#" data-toggle="modal" data-target="#removerUsuario"><i class="fas fa-trash-alt mr-2"></i></a></td>
                   <td><a href="#" data-toggle="modal" data-target="#emailUsuario"><i class="fas fa-envelope"></i></a></td>
                 </tr>
@@ -111,7 +111,7 @@
                   <td>mauromoura96@hotmail.com</td>
                   <td>1</td>
                   <td><i class="far fa-times-circle"></i></td>
-                  <td><a href="#" data-toggle="modal" data-target="#editarUsuario"><i class="fas fa-edit mr-2"></i></a> </td>
+                  <td><a href="#" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fas fa-edit mr-2"></i></a> </td>
                   <td><a href="#" data-toggle="modal" data-target="#removerUsuario"><i class="fas fa-trash-alt mr-2"></i></a></td>
                   <td><a href="#" data-toggle="modal" data-target="#emailUsuario"><i class="fas fa-envelope"></i></a></td>
                   </tr>
@@ -139,20 +139,24 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Nome</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">1</th>
                   <td>ADS</td>
+                  <td><a href="#" data-toggle="modal" data-target="#removerCurso"><i class="fas fa-trash-alt mr-2"></i></a></td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
                   <td>Engenharia Civil</td>
+                  <td><a href="#" data-toggle="modal" data-target="#removerCurso"><i class="fas fa-trash-alt mr-2"></i></a></td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
                   <td>Direito</td>
+                  <td><a href="#" data-toggle="modal" data-target="#removerCurso"><i class="fas fa-trash-alt mr-2"></i></a></td>
                 </tr>
               </tbody>
           </table>
@@ -211,36 +215,33 @@
             </button>
           </div>
           <div class="modal-body">
-              <form name="cadastrarUsuario" action="" method="POST">
+              <form name="cadastrarUsuario" id="cadastrarUsuario" action="" method="POST">
                 <div class="row">
                   <div class="col">
                     <label>Nome</label>
                     <input name="nome" type="text" class="form-control" placeholder="Nome do usuário" maxlength="60">
-                    <div id="errNomeUsuario"></div><!--Msg Erro-->
                   </div>
                 </div>
                 <div class="row">
                   <div class="col mt-3">
                     <label>E-mail</label>
                     <input name="email" type="text" class="form-control" placeholder="email@email.com.br" maxlength="60">
-                    <div id="errEmailUsuario"></div><!--Msg Erro-->
                   </div>
                 </div>
                 <div class="row">
                   <div class="col mt-3">
                     <label for="nivel">Nivel</label>
                     <select name="nivel" class="form-control" id="nivel">
-                      <option value="" disabled selected>Selecione o nivel...</option>
+                      <option value="" disabled selected></option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
                     </select>
-                    <div id="nivelUsuario"></div><!--Msg Erro-->
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-6">
-                    <button type="submit" class="btn btn-default btn-block mt-4" onclick="return cadastrarUsuario()">Salvar</button>
+                    <button type="submit" class="btn btn-default btn-block mt-4">Salvar</button>
                   </div>
                   <div class="col-sm-6">
                     <button type="button" class="btn btn-danger btn-block mt-4" data-dismiss="modal">Fechar</button>
@@ -264,17 +265,16 @@
             </button>
           </div>
           <div class="modal-body">
-              <form name="cadastrarCurso" action="" method="POST">
+              <form name="cadastrarCurso" id="cadastrarCurso" action="" method="POST">
                 <div class="row">
                   <div class="col">
                     <label>Nome do curso</label>
                     <input name="curso" type="text" class="form-control" placeholder="Nome do curso" maxlength="60">
-                    <div id="errNomeCurso"></div><!--Msg Erro-->
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-6">
-                    <button type="submit" class="btn btn-default btn-block mt-4" onclick="return cadastrarCurso()">Salvar</button>
+                    <button type="submit" class="btn btn-default btn-block mt-4">Salvar</button>
                   </div>
                   <div class="col-sm-6">
                     <button type="button" class="btn btn-danger btn-block mt-4" data-dismiss="modal">Fechar</button>
@@ -288,7 +288,7 @@
     <!-- Modal Cadastrar Usuario - FIM -->
 
     <!-- Modal Editar Usuario -->
-    <div class="modal fade" id="editarUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalEditarUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -298,36 +298,33 @@
             </button>
           </div>
           <div class="modal-body">
-              <form name="editarUsuario" action="" method="POST">
+              <form name="editarUsuario" id="editarUsuario" action="" method="POST">
                 <div class="row">
                   <div class="col">
                     <label>Nome</label>
                     <input name="nome" type="text" class="form-control" placeholder="Nome do usuário" maxlength="60">
-                    <div id="errNomeUsuario"></div><!--Msg Erro-->
                   </div>
                 </div>
                 <div class="row">
                   <div class="col mt-3">
                     <label>E-mail</label>
                     <input name="email" type="text" class="form-control" placeholder="email@email.com.br" maxlength="60">
-                    <div id="errEmailUsuario"></div><!--Msg Erro-->
                   </div>
                 </div>
                 <div class="row">
                   <div class="col mt-3">
                     <label for="nivel">Nivel</label>
                     <select name="nivel" class="form-control" id="nivel">
-                      <option value="" disabled selected>Selecione o nivel...</option>
+                      <option value="" disabled selected></option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
                     </select>
-                    <div id="nivelUsuario"></div><!--Msg Erro-->
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-6">
-                    <button type="submit" class="btn btn-default btn-block mt-4" onclick="return editarUsuario()">Salvar</button>
+                    <button type="submit" class="btn btn-default btn-block mt-4">Salvar</button>
                   </div>
                   <div class="col-sm-6">
                     <button type="button" class="btn btn-danger btn-block mt-4" data-dismiss="modal">Fechar</button>
@@ -354,8 +351,8 @@
             Deseja remover este usuario?
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-default">Remover</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-danger btn-block mt-4 ml-2" data-dismiss="modal">Não</button>
+            <a href="#" class="btn btn-default btn-block mt-4 ml-2">Sim</a>
           </div>
         </div>
       </div>
@@ -377,6 +374,28 @@
     </div>
     <!-- Modal E-mail Usuario - FIM -->
 
+    <!-- Modal Remover Curso -->
+    <div class="modal fade" id="removerCurso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Remover Curso</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Deseja remover este curso?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger btn-block mt-4 ml-2" data-dismiss="modal">Não</button>
+            <a href="#" class="btn btn-default btn-block mt-4 ml-2">Sim</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Remover Curso - FIM -->
+
 
     <!-- Main - FIM-->
       
@@ -389,13 +408,12 @@
     </footer>
     <!-- Footer - FIM -->
 
-    <script>
-      $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
-      });
-    </script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/localization/messages_pt_BR.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
   </body>
 </html>
