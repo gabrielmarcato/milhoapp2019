@@ -121,10 +121,14 @@ table i {
   border-bottom: 2px solid var(--cor-padrao); 
   padding-bottom: 5px;
 }
-
 .error{
   color:red;
   padding-top: 5px;
+}
+.imgTable {
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
 }
 
 /***** Footer *****/
@@ -150,7 +154,7 @@ table i {
     position: fixed;
     width: 70%;
     height: 100vh;
-    background: var(--cor-btn-hover);
+    background: #757575;
     color: var(--cor-white);
     right: -100%;
     top: 0;
