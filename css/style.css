@@ -125,10 +125,13 @@ table i {
   color:red;
   padding-top: 5px;
 }
-.imgTable {
-  border-radius: 50%;
-  height: 45px;
-  width: 45px;
+.listaRank {
+  border: solid 2px var(--cor-padrao); 
+}
+.headerRank {
+  background-color: var(--cor-padrao);
+  padding: 10px;
+  color: var(--cor-white);
 }
 
 /***** Footer *****/
@@ -170,7 +173,6 @@ table i {
   .menu a{
     display: block;
     padding: 20px;
-    border: 1px solid var(--cor-white);
   }
   .hide-menu-btn{
     position: absolute;
