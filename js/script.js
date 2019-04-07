@@ -106,7 +106,10 @@ $(document).ready(function(){
             curso: {
                 required: true,
             },
-            pagamento: {
+            localizacao: {
+                required: true,
+            },
+            logoBarraca: {
                 required: true,
             },
         }
