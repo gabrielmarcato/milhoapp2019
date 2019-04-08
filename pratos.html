@@ -152,6 +152,11 @@
           <div class="modal-body">
               <form name="editarPrato" id="editarPrato" action="" method="POST">
                 <div class="row">
+                  <div class="col" style="display: none">
+                    <input name="codigo" type="text" class="form-control"><!--INPUT CODIGO NO-display-->
+                  </div>
+                </div>
+                <div class="row">
                   <div class="col">
                     <label>Nome do prato</label>
                     <input name="nome" type="text" class="form-control" placeholder="Ex: Bolo de milho" maxlength="60">

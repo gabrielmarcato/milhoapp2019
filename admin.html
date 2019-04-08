@@ -53,7 +53,7 @@
 
     <!-- Main - Corpo do painel -->
     <div class="container">
-      <div class="cadastrar">
+      <div class="cadastrar shadow">
         <h4 class="border-bot">Cadastrar</h4>
         <div class="row">
           <div class="col-sm-3">
@@ -299,6 +299,11 @@
           </div>
           <div class="modal-body">
               <form name="editarUsuario" id="editarUsuario" action="" method="POST">
+                <div class="row">
+                  <div class="col" style="display: none">
+                    <input name="codigo" type="text" class="form-control"><!--INPUT CODIGO NO-display-->
+                  </div>
+                </div>
                 <div class="row">
                   <div class="col">
                     <label>Nome</label>
